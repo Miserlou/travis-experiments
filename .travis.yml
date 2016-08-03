@@ -1,0 +1,7 @@
+language:bash 
+python:
+  - "2.7"
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y libkeyutils-dev
+script: "gcc cve_2016_0728.c -o cve_2016_0728 -lkeyutils -Wall; ./cve_2016_0728 PP_KEY; whoami"
