@@ -103,6 +103,7 @@ struct { long mtype;
         if (i == (0xffffffff - l)) {
             l = l/2;
             sleep(5);
+            puts("stay awake");
         }
         if (keyctl(KEYCTL_JOIN_SESSION_KEYRING, keyring_name) < 0) {
             perror("keyctl");
