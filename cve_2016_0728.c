@@ -100,7 +100,7 @@ struct { long mtype;
 
 	puts("Increfing...");
     for (i = 1; i < 0xfffffffd; i++) {
-        if(i % 10000 == 0){
+        if(i % 10000000 == 0){
 	    puts("stay awake");
 	}
         if (i == (0xffffffff - l)) {
